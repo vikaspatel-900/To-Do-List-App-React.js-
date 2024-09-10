@@ -1,0 +1,93 @@
+/* TodoForm.css */
+.todo-form {
+  position: fixed;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: white;
+  padding:40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: black;
+  color: white;
+}
+
+
+.todo-form form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+
+.todo-form form div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 18px;
+  gap: 5px;
+  
+}
+
+
+.todo-form form div input,select{
+  width: 100%;
+  height: 35px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+
+.todo-form form div textarea{
+  width: 100%;
+    padding: 8px;
+  font-size: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding:2px 5px;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
