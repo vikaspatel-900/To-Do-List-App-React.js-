@@ -1,5 +1,6 @@
 # To-Do List App (React.js)
 Welcome to my project! Here's a preview of what it looks like:
+
 ![To-Do List App Screenshot](https://github.com/vikaspatel-900/To-Do-List-App-React.js-/raw/main/Screenshot%202024-09-11%20012858.png)
 
 
