@@ -54,6 +54,7 @@ function Todolist() {
 
       <div className="navbar">
         <h3>Todo List</h3>
+        <input type="search" placeholder="search here" />
         <button className="add-task-btn" onClick={() => { setEditingTask(null); setShowForm(true); }}> Add Task </button>
       </div>
       <div className="todo-list">
@@ -73,6 +74,19 @@ function Todolist() {
           <div className="logo">
             <img src={logo} alt="" />
           </div>
+          <div className="side-bar-link">
+            <li><i class="bi bi-house-fill"></i><a href="/#">Home</a></li>
+
+            <li><i class="bi bi-hourglass-split"></i><a href="/#">Progress</a></li>
+            <li><i class="bi bi-hourglass-top"></i><a href="/#">Pending</a></li>
+            <li><i class="bi bi-hourglass-bottom"></i><a href="/#">Complete</a></li>
+            <li><i class="bi bi-gear-fill"></i><a href="/#">Settings</a></li>
+            <li>
+              <i class="bi bi-person-circle"></i>
+              <a href="/#">Profile</a>
+            </li>
+          </div>
+
         </div>
 
         <div className="task-cards">
