@@ -39,8 +39,13 @@
 }
 
 
+.navbar img{
+  width: 150px;
+}
+
+
 .navbar input{
-  min-width: 700px;
+  width: 700px;
   height: 40px;
   padding: 8px;
   border-radius: 4px;
@@ -136,4 +141,93 @@
   background-color:rgba(0, 0, 0, 0.392);
   z-index: 5;
   backdrop-filter: blur(10px);
+}
+
+
+
+
+/*----------------------------------------------------------media------------------------------------------------------------------------------*/
+
+
+@media only screen and (max-width:1100px){
+
+  .navbar input{
+    width: 500px;
+    height: 35px;
+  }
+
+
+  .side-bar img{
+    width: 100px;
+  }
+
+  .navbar img{
+    width: 100px;
+  }
+
+
+  .navbar button{
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media only screen and (max-width:940px){
+  .side-bar{
+    display: none;
+  }
+
+
+  .task-cards{
+    width: 100%;
+    padding: 50px 20px;
+    gap: 40px;
+  }
+
+
+  .navbar{
+    padding: 0px 20px;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width:800px){
+  .navbar input{
+    width: 300px;
+    height: 35px;
+  }
+}
+
+
+@media only screen and (max-width:600px){
+  .navbar input{
+    width: 200px;
+    height: 30px;
+  }
+
+
+  .navbar button{
+    padding: 6px 6px;
+    font-size: 12px;
+  }
+
+
+  .navbar img{
+    width: 70px;
+  }
+
+  .navbar{
+    padding: 0px 8px;
+  }
+
+
+
+
+
 }

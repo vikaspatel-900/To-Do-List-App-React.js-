@@ -6,9 +6,12 @@ import "./TodoList.css";
 import logo from '../images/logo.png'
 
 function Todolist() {
+
   const [tasks, setTasks] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -49,12 +52,32 @@ function Todolist() {
     });
   };
 
+
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
+
+  const filteredTasks = tasks
+    .filter(task => task.taskName.toLowerCase().includes(searchQuery.toLowerCase()))
+    .filter(task => {
+      if (filter === 'all') return true; // Show all tasks
+      return task.status === filter; // Show tasks matching the filter (pending, inprogress, complete)
+    });
+
+
   return (
     <>
 
       <div className="navbar">
-        <h3>Todo List</h3>
-        <input type="search" placeholder="search here" />
+       <img src={logo} alt="" />
+        <input type="search" value={searchQuery} onChange={handleSearchChange}  placeholder="Search tasks by title" />
         <button className="add-task-btn" onClick={() => { setEditingTask(null); setShowForm(true); }}> Add Task </button>
       </div>
       <div className="todo-list">
@@ -75,11 +98,10 @@ function Todolist() {
             <img src={logo} alt="" />
           </div>
           <div className="side-bar-link">
-            <li><i class="bi bi-house-fill"></i><a href="/#">Home</a></li>
-
-            <li><i class="bi bi-hourglass-split"></i><a href="/#">Progress</a></li>
-            <li><i class="bi bi-hourglass-top"></i><a href="/#">Pending</a></li>
-            <li><i class="bi bi-hourglass-bottom"></i><a href="/#">Complete</a></li>
+            <li><i class="bi bi-house-fill"></i><a href="/#" onClick={() => handleFilterChange('all')}>Home</a></li>
+            <li><i class="bi bi-hourglass-top"></i><a href="/#" onClick={() => handleFilterChange('pending')}>Pending</a></li>
+            <li><i class="bi bi-hourglass-split"></i><a href="/#" onClick={() => handleFilterChange('in progress')}>Progress</a></li>
+            <li><i class="bi bi-hourglass-bottom"></i><a href="/#" onClick={() => handleFilterChange('complete')}>Complete</a></li>
             <li><i class="bi bi-gear-fill"></i><a href="/#">Settings</a></li>
             <li>
               <i class="bi bi-person-circle"></i>
@@ -91,7 +113,8 @@ function Todolist() {
 
         <div className="task-cards">
 
-          {tasks.map((task, index) => (
+        {filteredTasks.length > 0 ? (
+          filteredTasks.map((task, index) => (
             <TodoCard
               key={task.id}
               index={index}
@@ -100,7 +123,15 @@ function Todolist() {
               onDelete={handleDelete}
               onStatusChange={handleStatusChange}
             />
-          ))}
+          ))
+        ) : (
+          <p>No tasks found for the current filter.</p>
+        )}
+
+          
+
+
+
         </div>
       </div>
     </>
