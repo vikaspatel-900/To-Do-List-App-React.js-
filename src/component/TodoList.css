@@ -190,14 +190,14 @@
 
   .task-cards{
     width: 100%;
-    padding: 40px 10px;
+    padding: 60px 10px;
     gap: 20px;
   }
 
 
   .navbar{
     padding: 10px 20px;
- 
+    
     position: relative;
     display: flex;
     flex-direction: row;
@@ -240,7 +240,7 @@
 @media only screen and (max-width:600px){
   .navbar input{
     width: 250px;
-    height: 30px;
+    height: 34px;
   }
 
 
@@ -260,7 +260,7 @@
 
 
   .menu-icon i{
-    font-size: 25px;
+    font-size: 27px;
   }
 
 
@@ -274,15 +274,15 @@
 @media only screen and (max-width:520px){
 
   .navbar{
-    height: 100px;
+    height: 115px;
     align-items: baseline;
     padding: 10px;
   }
 
   .navbar input{
     position: absolute;
-    bottom: 10px;
-    width: 94%;
+    bottom: 15px;
+    width: 95%;
   }
 
 }
