@@ -39,6 +39,12 @@
 }
 
 
+.menu-icon i{
+   font-size: 30px;
+   display: none;
+}
+
+
 .navbar img{
   width: 150px;
 }
@@ -134,13 +140,14 @@
 
 .form-upper{
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  height: 120vh;
+  position: fixed;
   top: 0;
   left: 0;
   background-color:rgba(0, 0, 0, 0.392);
-  z-index: 5;
+  z-index: 100;
   backdrop-filter: blur(10px);
+  overflow: scroll;
 }
 
 
@@ -183,14 +190,39 @@
 
   .task-cards{
     width: 100%;
-    padding: 50px 20px;
-    gap: 40px;
+    padding: 40px 10px;
+    gap: 20px;
   }
 
 
   .navbar{
-    padding: 0px 20px;
+    padding: 10px 20px;
+ 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
   }
+
+
+
+
+
+  .menu-icon i{
+    display: block;
+
+  }
+
+  .menu-icon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+
+
 }
 
 
@@ -207,7 +239,7 @@
 
 @media only screen and (max-width:600px){
   .navbar input{
-    width: 200px;
+    width: 250px;
     height: 30px;
   }
 
@@ -219,7 +251,7 @@
 
 
   .navbar img{
-    width: 70px;
+    width: 90px;
   }
 
   .navbar{
@@ -227,7 +259,30 @@
   }
 
 
+  .menu-icon i{
+    font-size: 25px;
+  }
 
 
+
+
+}
+
+
+
+
+@media only screen and (max-width:520px){
+
+  .navbar{
+    height: 100px;
+    align-items: baseline;
+    padding: 10px;
+  }
+
+  .navbar input{
+    position: absolute;
+    bottom: 10px;
+    width: 94%;
+  }
 
 }

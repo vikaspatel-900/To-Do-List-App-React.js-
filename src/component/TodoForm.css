@@ -1,11 +1,11 @@
 /* TodoForm.css */
 .todo-form {
-  position: fixed;
-  top: 26%;
+  position: absolute;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -20%);
   background: white;
-  padding:40px 20px;
+  padding:20px 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s;
@@ -21,7 +21,7 @@
 
 
 .todo-form form{
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -90,4 +90,43 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+
+
+
+@media only screen and (max-width:800px){
+
+
+  .todo-form{
+    width: 400px;
+    top: 20%;
+  }
+
+  .todo-form form div label{
+    font-size: 14px;
+  }
+
+  .todo-form form div input,select{
+    font-size: 13px;
+    height: 30px;
+  }
+
+
+  .todo-form form div textarea{
+    font-size: 13px;
+  }
+}
+
+
+
+@media only screen and (max-width:460px){
+  .todo-form{
+    width: 90%;
+    top: 20%;
+    padding: 20px 0px;
+    
+  }
+
+
 }

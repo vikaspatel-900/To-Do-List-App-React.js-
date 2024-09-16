@@ -11,7 +11,8 @@ function TodoCard({ task, index, onEdit, onDelete, onStatusChange }) {
   };
 
   const styleBorder={
-    borderTop:task.status==='pending' ? '6px solid red':task.status==='complete'?'6px solid green':'6px solid yellow'
+    borderTop:task.status==='pending' ? '6px solid red':task.status==='complete'?'6px solid green':'6px solid yellow',
+    backdropFilter:task.status==='complete'?'blur(10px)':'0px'
   }
 
 
@@ -31,7 +32,7 @@ function TodoCard({ task, index, onEdit, onDelete, onStatusChange }) {
   return (
     <div className="todo-card" style={styleBorder}>
       <h3>{index+1}. {task.taskName}</h3>
-      <div className='description'><p>{task.description}</p></div>
+      {/* <div className='description'><p>{task.description}</p></div> */}
       <p><strong>Start Date: </strong> {startdate}</p>
       <p><strong>Deadline: </strong> {enddate}</p>
       {/* <p><strong>Status:</strong> {task.status}</p> */}

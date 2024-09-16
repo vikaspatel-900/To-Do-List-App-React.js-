@@ -116,3 +116,50 @@
   position: absolute;
   overflow: scroll;
 }
+
+
+
+@media only screen and (max-width:800px){
+  .todo-card{
+    height: 180px;
+    width: 290px;
+    gap: 5px;
+    padding: 5px 10px;
+    
+    
+  }
+
+
+  .icon-div{
+    opacity: 1;
+  }
+
+
+  .todo-card h3{
+    padding: 2px 6px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  
+  }
+
+  .todo-card p{
+    font-size: 14px;
+  }
+
+  .status{
+    font-size: 14px;
+  }
+
+  .task-description{
+    width: 285px;
+    height: 135px;
+  }
+
+
+
+  .more-details{
+    opacity: 1;
+  }
+
+
+}

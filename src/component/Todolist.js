@@ -76,8 +76,12 @@ function Todolist() {
     <>
 
       <div className="navbar">
-       <img src={logo} alt="" />
-        <input type="search" value={searchQuery} onChange={handleSearchChange}  placeholder="Search tasks by title" />
+        <div className="menu-icon">
+          <i className="bi bi-list"></i>
+          <img src={logo} alt="" />
+        </div>
+        
+        <input type="search" value={searchQuery} onChange={handleSearchChange} placeholder="Search tasks by title" />
         <button className="add-task-btn" onClick={() => { setEditingTask(null); setShowForm(true); }}> Add Task </button>
       </div>
       <div className="todo-list">
@@ -113,22 +117,22 @@ function Todolist() {
 
         <div className="task-cards">
 
-        {filteredTasks.length > 0 ? (
-          filteredTasks.map((task, index) => (
-            <TodoCard
-              key={task.id}
-              index={index}
-              task={task}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              onStatusChange={handleStatusChange}
-            />
-          ))
-        ) : (
-          <p>No tasks found for the current filter.</p>
-        )}
+          {filteredTasks.length > 0 ? (
+            filteredTasks.map((task, index) => (
+              <TodoCard
+                key={task.id}
+                index={index}
+                task={task}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                onStatusChange={handleStatusChange}
+              />
+            ))
+          ) : (
+            <p>No tasks found for the current filter.</p>
+          )}
 
-          
+
 
 
 
