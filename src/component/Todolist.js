@@ -67,8 +67,8 @@ function Todolist() {
   const filteredTasks = tasks
     .filter(task => task.taskName.toLowerCase().includes(searchQuery.toLowerCase()))
     .filter(task => {
-      if (filter === 'all') return true; // Show all tasks
-      return task.status === filter; // Show tasks matching the filter (pending, inprogress, complete)
+      if (filter === 'all') return true;
+      return task.status === filter;
     });
 
 
@@ -76,14 +76,39 @@ function Todolist() {
     <>
 
       <div className="navbar">
-        <div className="menu-icon">
-          <i className="bi bi-list"></i>
-          <img src={logo} alt="" />
+        <div className="menu-icon ">
+          <div type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i className="bi bi-list" ></i>
+          </div>
+          <img src={logo} alt="" onClick={() => handleFilterChange('all')} />
         </div>
-        
+
         <input type="search" value={searchQuery} onChange={handleSearchChange} placeholder="Search tasks by title" />
         <button className="add-task-btn" onClick={() => { setEditingTask(null); setShowForm(true); }}> Add Task </button>
       </div>
+
+
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <img src={logo} alt="" width={100} />
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div className="menu-bar-link">
+          <li><i class="bi bi-house-fill"></i><a href="/#" onClick={() => handleFilterChange('all')}>Home</a></li>
+          <li><i class="bi bi-hourglass-top"></i><a href="/#" onClick={() => handleFilterChange('pending')}>Pending</a></li>
+          <li><i class="bi bi-hourglass-split"></i><a href="/#" onClick={() => handleFilterChange('in progress')}>Progress</a></li>
+          <li><i class="bi bi-hourglass-bottom"></i><a href="/#" onClick={() => handleFilterChange('complete')}>Complete</a></li>
+          <li><i class="bi bi-gear-fill"></i><a href="/#">Settings</a></li>
+          <li>
+            <i class="bi bi-person-circle"></i>
+            <a href="/#">Profile</a>
+          </li>
+        </div>
+      </div>
+
+
+
       <div className="todo-list">
 
 
@@ -99,7 +124,7 @@ function Todolist() {
 
         <div className="side-bar">
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" onClick={() => handleFilterChange('all')} />
           </div>
           <div className="side-bar-link">
             <li><i class="bi bi-house-fill"></i><a href="/#" onClick={() => handleFilterChange('all')}>Home</a></li>

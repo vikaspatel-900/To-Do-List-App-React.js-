@@ -12,7 +12,7 @@ function TodoCard({ task, index, onEdit, onDelete, onStatusChange }) {
 
   const styleBorder={
     borderTop:task.status==='pending' ? '6px solid red':task.status==='complete'?'6px solid green':'6px solid yellow',
-    backdropFilter:task.status==='complete'?'blur(10px)':'0px'
+    
   }
 
 
@@ -60,12 +60,16 @@ function TodoCard({ task, index, onEdit, onDelete, onStatusChange }) {
         </div>
       </div>
 
+
+       
+
       {isDescriptionVisible && (
         <div className="task-description">
           <p style={{fontWeight:'600'}}>Description :-</p>
           <p>{task.description}</p>
         </div>
       )}
+
     </div>
   );
 }

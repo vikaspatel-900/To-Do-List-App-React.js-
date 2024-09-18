@@ -1,13 +1,13 @@
 /* TodoCard.css */
 .todo-card {
   
-  padding: 15px;
+  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 300px;
   height: 230px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
   align-items: flex-start;
   position: relative;
   text-align: left;
@@ -23,6 +23,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   margin-bottom: 20px;
+  font-size: 18px;
 
 
 }
@@ -33,22 +34,23 @@
   gap: 5px;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
 
 }
 
 .status select{
   border: none;
   font-size: 14px;
+
 }
 
-.card-buttons {
+/* .card-buttons {
   margin-top: 10px;
-}
+} */
 
-.card-buttons button, .card-buttons select {
+/* .card-buttons button, .card-buttons select {
   margin-right: 10px;
-}
+} */
 
 
 .icon-div{
@@ -57,7 +59,7 @@
   right: 10px;
   display: flex;
   gap: 10px;
-  font-size: 20px;
+  font-size: 18px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 2px 6px;
   border-radius: 3px;
@@ -74,17 +76,7 @@
 
 
 
-.description{
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  top: 150px;
-  left: 0px;
-  z-index: 4;
-  background-color: white;
-  padding: 20px;
-  display: none;
-}
+
 
 
 .more-details{
@@ -97,6 +89,13 @@
   border: none;
   background-color: grey;
   opacity: 0;
+  font-size: 12px;
+}
+
+
+
+.card-buttons{
+  height: 0px;
 }
 
 
@@ -121,24 +120,31 @@
 
 @media only screen and (max-width:800px){
   .todo-card{
-    height: 180px;
+    height: 200px;
     width: 290px;
-    gap: 5px;
-    padding: 5px 10px;
+    display: flex;
+    gap: 0px;
+    padding: 8px 10px;
     
+  }
+
+
+  .status select{
+    height: max-content;
     
   }
 
 
   .icon-div{
     opacity: 1;
+    
   }
 
 
   .todo-card h3{
     padding: 2px 6px;
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 17px;
+    margin-bottom: 10px;
   
   }
 
@@ -148,11 +154,12 @@
 
   .status{
     font-size: 14px;
+    margin-top: 0px;
   }
 
   .task-description{
     width: 285px;
-    height: 135px;
+    height: 155px;
   }
 
 

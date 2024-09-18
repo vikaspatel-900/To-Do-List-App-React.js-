@@ -38,6 +38,51 @@
 
 }
 
+.menu-icon button{
+  padding: 0px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  background-color: none;
+  height: max-content;
+  
+
+}
+
+
+#offcanvasExample{
+  width: 200px;
+  
+   display: flex;
+   flex-direction: column;
+   background-color: #167d8f;
+   
+   
+}
+
+
+.menu-bar-link{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 25px;
+  margin-top: 20px;
+  
+}
+
+
+
+.menu-bar-link li{
+  display: flex;
+  gap: 10px;
+}
+
+
+.menu-bar-link li a{
+  color: black;
+  text-decoration: none;
+}
+
 
 .menu-icon i{
    font-size: 30px;
